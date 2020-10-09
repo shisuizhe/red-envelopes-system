@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Album example · Bootstrap</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="views/css/app.css" rel="stylesheet"/>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="album.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-red">
+        <a class="navbar-brand" href="#">红包秒杀系统DEMO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/v1/envelope/Sending">发红包</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">抢红包</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">查看列表</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <p></p>
+            <div class="row bd-form-row">
+
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+
+                    <form action="/v1/envelope/Sending" method="post" id="envelope_form">
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-outline-danger active">
+                                <input type="radio" name="envelopeType" id="option1" autocomplete="off" checked
+                                       value="2"/> 碰运气红包
+                            </label>
+                            <label class="btn btn-outline-danger">
+                                <input type="radio" name="envelopeType" id="option2" autocomplete="off" value="1"/>普通红包
+                            </label>
+                        </div>
+                        <p></p>
+                        <div class="form-group">
+                            <label for="re-quantity">红包数量</label>
+                            <input type="text" class="form-control" id="re-quantity" name="quantity"
+                                   aria-describedby="requantityHelp"
+                                   placeholder="输入红包数量">
+                            <small id="requantityHelp" class="form-text text-muted">红包数量不能大于100</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="re-amount">单个红包金额</label>
+                            <input type="text" class="form-control" id="re-amount" name="amount"
+                                   aria-describedby="amountHelp"
+                                   placeholder="输入红包数量">
+                            <small id="amountHelp" class="form-text text-muted">红包总金额不能大于100元</small>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="re-blessing" name="blessing"
+                                   aria-describedby="blessingHelp"
+                                   placeholder="节日快乐！">
+                        </div>
+
+                        <button type="button" class="btn btn-danger sendEnvelope">发送红包</button>
+                        <p></p>
+                        <div class="alert alert-danger alert-dismissible fade " role="alert">
+                            <div class="message"><br/></div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="alert alert-success alert-dismissible fade" role="alert">
+                            <div class="message"><br/></div>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-3"></div>
+
+
+            </div>
+
+            <script type="application/javascript">
+
+                $(".sendEnvelope").click(function () {
+                    var postData = $("#envelope_form").serializeObject();
+                    console.log(postData);
+                    $.ajax({
+                        url: "/v1/envelope/Sending",
+                        type: "POST",
+                        dataType: 'json',
+                        contentType: 'application/json; charset=utf-8',
+                        data: JSON.stringify(postData),
+                        success: function (result) {
+                            $(".alert-success").find(".message").html(result)
+                            console.log(result)
+                        },
+                        error: function () {
+                            $(".alert-danger").find(".message").html("error")
+                        }
+
+                    });
+                });
+            </script>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+
+<script src="views/js/app.js"></script>
+<script>window.jQuery || document.write('<script src="./static/bootstrap/js/jquery-slim.min.js"><\/script>')</script>
+<script src="static/bootstrap/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+</body>
+</html>

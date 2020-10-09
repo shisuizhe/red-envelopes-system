@@ -1,0 +1,56 @@
+<!--红包收发记录页面-->
+<div class="page-group">
+
+    <!--红包记录-->
+    <div class="page" id='router5'>
+        <header class="bar bar-nav theme-red">
+            <a class="button button-link button-nav pull-left back" href="#">
+                <span class="icon icon-left"></span>
+                返回
+            </a>
+            <h1 class='title'>红包记录</h1>
+        </header>
+        <div class="content">
+            <div class="content-block txt_center">
+                <div><img src="/public/ui/imgs/gift.gif" height="130" class="img-gift"/></div>
+                <div>{{.order.Username}}的<span
+                            class="red">{{if eq .order.EnvelopeType 1  }}普通红包{{else}}碰运气红包{{end}}</span></div>
+                <div class="amount_big">￥{{.order.Amount}}</div>
+                <div class="date">已存入资金账户</div>
+
+            </div>
+            <div class="content-block-title">{{.size}}个红包共{{.totalAmount}}
+                元{{if .isReceived}}，{{.timeMsg}}被抢光{{else}},还有{{.remainQuantity}}个红包。{{end}}</div>
+
+            <div class="list-block">
+                <ul>
+                    {{range .items}}
+                        <li class="item-content  ">
+                            <div class="item-media"><img src="/public/ui/imgs/1.jpg" class="header_img"/></div>
+                            <div class="item-inner">
+
+                                <div class="item-title">
+                                    <div>{{.RecvUsername}}</div>
+                                    <div class="date">{{.CreatedAt.Format $.format}}</div>
+                                </div>
+                                <div class="item-after">
+                                    <div>
+                                        {{.Amount}}
+                                        {{if $.isLucky}}
+                                            {{if .IsLuckiest}}
+                                                <div class="small_msg lucky_txt">【运气最好】</div>
+                                            {{end}}
+                                        {{end}}
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    {{end}}
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

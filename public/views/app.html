@@ -1,0 +1,79 @@
+<p></p>
+<div class="row bd-form-row">
+
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+
+        <form   method="post" id="envelope_form">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-outline-danger active">
+                    <input type="radio" name="envelopeType" id="option1" autocomplete="off" checked value="2"/> 碰运气红包
+                </label>
+                <label class="btn btn-outline-danger">
+                    <input type="radio" name="envelopeType" id="option2" autocomplete="off" value="1"/>普通红包
+                </label>
+            </div>
+            <p></p>
+            <div class="form-group">
+                <label for="re-quantity">红包数量</label>
+                <input type="text" class="form-control" id="re-quantity" name="quantity" aria-describedby="requantityHelp"
+                       placeholder="输入红包数量">
+                <small id="requantityHelp" class="form-text text-muted">红包数量不能大于100</small>
+            </div>
+            <div class="form-group">
+                <label for="re-amount">单个红包金额</label>
+                <input type="text" class="form-control" id="re-amount" name="amount"
+                       aria-describedby="amountHelp"
+                       placeholder="输入红包数量">
+                <small id="amountHelp" class="form-text text-muted">红包总金额不能大于100元</small>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="re-blessing" name="blessing"
+                       aria-describedby="blessingHelp"
+                       placeholder="节日快乐！">
+            </div>
+
+            <button type="button" class="btn btn-danger sendEnvelope">发送红包</button>
+            <p></p>
+            <div class="alert alert-danger alert-dismissible fade " role="alert">
+                <div class="message"><br/></div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="alert alert-success alert-dismissible fade" role="alert">
+                <div class="message"><br/></div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-lg-3"></div>
+
+
+</div>
+
+<script type="application/javascript">
+
+    $(".sendEnvelope").click(function () {
+        var postData = $("#envelope_form").serializeObject();
+        console.log(postData);
+        $.ajax({
+            url: "/v1/envelope/sending",
+            type: "POST",
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(postData),
+            success: function (result) {
+                $(".alert-success").find(".message").html(result)
+                console.log(result)
+            },
+            error: function () {
+                $(".alert-danger").find(".message").html("error")
+            }
+
+        });
+    });
+</script>

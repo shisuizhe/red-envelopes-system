@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的红包</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <link rel="stylesheet" href="/public/ui/css/red.css">
+    <style type="text/css">
+
+    </style>
+
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current ">
+
+        <header class="bar bar-nav theme-red">
+            <a class="icon icon-me pull-left open-panel "></a>
+            <h1 class="title">我的红包</h1>
+        </header>
+
+        <nav class="bar bar-tab theme-red">
+            <a class="tab-item active" href="#">
+                <span class="icon icon-me"></span>
+                <span class="tab-label">我发的红包</span>
+            </a>
+            <a class="tab-item" href="#router2">
+                <span class="icon icon-edit"></span>
+                <span class="tab-label">发红包</span>
+            </a>
+            <a class="tab-item" href="/envelope/rev/home">
+                <span class="icon icon-message"></span>
+                <span class="tab-label">抢红包</span>
+            </a> <a class="tab-item" href="/envelope/recvd/list">
+                <span class="icon icon-menu"></span>
+                <span class="tab-label">抢到的红包</span>
+            </a>
+        </nav>
+        <div class="content">
+            <div class="content-block-title">我发的红包列表</div>
+
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <a class="item-content item-link" href="/envelope/details?id=1">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <div>碰运气红包</div>
+                                    <div class="date"> 2019.4.26 08:04</div>
+                                </div>
+                                <div class="item-after">68.88</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item-content item-link" href="/envelope/details?id=1">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">普通红包
+                                    <div class="date"> 2019.4.26 08:04</div>
+                                </div>
+                                <div class="item-after">13.14</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item-content item-link" href="/envelope/details?id=1">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">普通红包
+                                    <div class="date"> 2019.4.26 08:04</div>
+                                </div>
+                                <div class="item-after">52.0</div>
+                            </div>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!--发红包主页面-->
+<div class="page" id='router2'>
+    <header class="bar bar-nav theme-red">
+        <a class="button button-link button-nav pull-left back" href="#">
+            <span class="icon icon-left"></span>
+            返回
+        </a>
+        <h1 class='title'>发红包</h1>
+    </header>
+    <div class="content">
+        <div class="list-block">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label" id="amount_txt">总金额</div>
+                            <div class="item-input">
+                                <input type="text" placeholder="总金额" name="amount" id="amount">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-name"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">改为</div>
+                            <div class="item-input">
+                                <select id="envelope_type">
+                                    <option value="1">碰运气红包</option>
+                                    <option value="2">普通红包</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                        <div class="item-inner">
+                            <div class="item-title label">红包个数</div>
+                            <div class="item-input">
+                                <input type="text" placeholder="红包个数">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input type="text" placeholder="恭喜发财，大吉大利！">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="content-block ">
+            <h2 style="text-align: center">￥0.00</h2>
+            <div class="row">
+                <div class="col-25"><p></p></div>
+                <div class="col-50">
+                    <a href="#" id="send_button" class="button button-big button-fill button-danger">发送红包 </a>
+
+                </div>
+                <div class="col-25"><p></p></div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<!--抢红包主页面-->
+<div class="page" id='router3'>
+    <header class="bar bar-nav theme-red">
+        <a class="button button-link button-nav pull-left back" href="#">
+            <span class="icon icon-left"></span>
+            返回
+        </a>
+        <h1 class='title'>抢红包</h1>
+    </header>
+    <div class="content">
+        <div class="content-block-title">点击抢红包</div>
+
+        <div class="list-block">
+            <ul>
+                <li class="item-content ">
+                    <div class="item-media"><span class="icon icon-gift"></span></div>
+                    <div class="item-inner">
+
+                        <div class="item-title">
+                            <div>来自枫荇的<span class="come_from_envelope">碰运气红包</span></div>
+                            <div class="date"> 2019.4.26 08:04</div>
+                        </div>
+                        <div class="item-after">
+                            <div>
+                                8.88 ￥
+                                <div class="small_msg">总金额（剩余2个/共10个）</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content ">
+                    <div class="item-media"><span class="icon icon-gift"></span></div>
+                    <div class="item-inner">
+                        <div class="item-title">
+                            <div>来自枫荇的<span class="come_from_envelope">普通红包</span></div>
+                            <div class="date"> 2019.4.26 08:04</div>
+                        </div>
+                        <div class="item-after">
+                            <div>8.88 ￥
+                                <div class="small_msg">单个金额（剩余9个/共10个）</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--红包个体详情-->
+<div class="page" id='router4'>
+    <header class="bar bar-nav theme-red">
+        <a class="button button-link button-nav pull-left back" href="#">
+            <span class="icon icon-left"></span>
+            返回
+        </a>
+        <h1 class='title'>红包详情</h1>
+    </header>
+    <div class="content">
+        <div class="content-block txt_center">
+            <div><img src="imgs/gift.gif" height="130"/></div>
+            <div>我发的<span class="red">碰运气红包</span></div>
+            <div>68.88</div>
+            <div class="list-block small">
+                <ul>
+                    <li class="item-content  ">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                当前状态
+                            </div>
+                            <div class="item-after">已支付</div>
+                        </div>
+                    </li>
+                    <li class="item-content  ">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                红包详情
+                            </div>
+                            <div class="item-after">
+                                <a href="#router5">点击查看</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-content  ">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                支付时间
+                            </div>
+                            <div class="item-after">2019年4月30日 08:23:34</div>
+                        </div>
+                    </li>
+                    <li class="item-content  ">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                支付单号
+                            </div>
+                            <div class="item-after">432423432432432</div>
+                        </div>
+                    </li>
+                    <li class="item-content  ">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                红包单号
+                            </div>
+                            <div class="item-after">432423432432432</div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!--红包记录-->
+<div class="page" id='router5'>
+    <header class="bar bar-nav theme-red">
+        <a class="button button-link button-nav pull-left back" href="#">
+            <span class="icon icon-left"></span>
+            返回
+        </a>
+        <h1 class='title'>红包记录</h1>
+    </header>
+    <div class="content">
+        <div class="content-block txt_center">
+            <div><img src="imgs/gift.gif" height="130"/></div>
+            <div>枫荇的<span class="red">碰运气红包</span></div>
+            <div class="amount_big">￥68.88</div>
+            <div class="date">已存入资金账户</div>
+
+        </div>
+        <div class="content-block-title">3个红包共68.88元，11秒被抢光</div>
+
+        <div class="list-block">
+            <ul>
+                <li class="item-content  ">
+                    <div class="item-media"><img src="imgs/1.jpg" class="header_img"/></div>
+                    <div class="item-inner">
+
+                        <div class="item-title">
+                            <div>慕粉1001</div>
+                            <div class="date">2019年4月30日 08:23:36</div>
+                        </div>
+                        <div class="item-after">
+                            <div>
+                                28.88 ￥
+                                <div class="small_msg lucky_txt">【运气最好】</div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content  ">
+                    <div class="item-media"><img src="imgs/2.jpg" class="header_img"/></div>
+                    <div class="item-inner">
+
+                        <div class="item-title">
+                            <div>慕粉1002</div>
+                            <div class="date">2019年4月30日 08:23:41</div>
+                        </div>
+                        <div class="item-after">
+                            <div>
+                                21.12 ￥
+                                <div class="small_msg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-content  ">
+                    <div class="item-media"><img src="imgs/3.jpg" class="header_img"/></div>
+                    <div class="item-inner">
+
+                        <div class="item-title">
+                            <div>慕粉1003</div>
+                            <div class="date">2019年4月30日 08:23:44</div>
+                        </div>
+                        <div class="item-after">
+                            <div>
+                                18.88 ￥
+                                <div class="small_msg"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--我抢到的红包主页面-->
+<div class="page" id='router7'>
+    <header class="bar bar-nav theme-red">
+        <a class="button button-link button-nav pull-left back" href="#">
+            <span class="icon icon-left"></span>
+            返回
+        </a>
+        <h1 class='title'>我抢到的红包</h1>
+    </header>
+    <div class="content">
+        <div class="content-block-title">总共抢到</div>
+
+        <div class="list-block">
+            <ul>
+                <li>
+                    <a class="item-content item-link" href="#router5">
+                        <div class="item-media"><span class="icon icon-gift"></span></div>
+                        <div class="item-inner">
+
+                            <div class="item-title">
+                                <div>来自XXX的<span class="come_from_envelope">碰运气红包</span></div>
+                                <div class="date"> 2019.4.26 08:04</div>
+                            </div>
+                            <div class="item-after">
+                                <div>
+                                    1.88 ￥
+                                    <div class="small_msg">（总金额8.88/共10个）</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a class="item-content item-link" href="#router5">
+                        <div class="item-media"><span class="icon icon-gift"></span></div>
+                        <div class="item-inner">
+                            <div class="item-title">
+                                <div>来自XXX的<span class="come_from_envelope">普通红包</span></div>
+                                <div class="date"> 2019.4.26 08:04</div>
+                            </div>
+                            <div class="item-after">
+                                <div>1 ￥
+                                    <div class="small_msg">（总金额10/共10个）</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type="text/javascript">
+    $.init();
+    $('#envelope_type').change(function () {
+        var v = $(this).val();
+
+        if (v == 1) {
+            $("#amount").attr("placeholder", "总金额");
+            $("#amount_txt").text("总金额");
+        } else {
+
+            $("#amount").attr("placeholder", "单个金额");
+            $("#amount_txt").text("单个金额");
+        }
+
+    })
+
+    $("#send_button").click(function () {
+        $.toast('发送成功，正在转到红包列表...', 2000, 'success top');
+    });
+</script>
+
+
+</body>
+</html>

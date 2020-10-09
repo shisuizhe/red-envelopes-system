@@ -1,0 +1,85 @@
+<div class="page-group">
+
+    <!--红包个体详情-->
+    <div class="page" id='router4'>
+        <header class="bar bar-nav theme-red">
+            <a class="button button-link button-nav pull-left back" href="#">
+                <span class="icon icon-left"></span>
+                返回
+            </a>
+            <h1 class='title'>红包详情</h1>
+        </header>
+        <div class="content">
+            <div class="content-block txt_center">
+
+
+                <div><img src="/public/ui/imgs/gift.gif" class="img-gift"/></div>
+                {{if .hasOrder}}
+                    <div>我发的<span class="red ">{{if eq .order.EnvelopeType 1  }}普通红包{{else}}碰运气红包{{end}}</span></div>
+                    <div class="red amount_big">{{.order.Amount}}</div>
+                    <div class="list-block small">
+                        <ul>
+                            <li class="item-content  ">
+                                <div class="item-media"></div>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        当前状态
+                                    </div>
+                                    <div class="item-after">
+                                        {{if eq .order.PayStatus 1  }} 未支付
+                                        {{else if eq .order.PayStatus 2}}支付中
+                                        {{else if eq .order.PayStatus 3}}已支付
+                                        {{else if eq .order.PayStatus 4}}支付失败
+                                        {{else}}未知{{end}}</div>
+                                </div>
+                            </li>
+                            <li class="item-content  ">
+                                <div class="item-media"></div>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        红包详情
+                                    </div>
+                                    <div class="item-after">
+                                        <a href="/envelope/list?id={{.order.EnvelopeNo}}" data-no-cache="true">点击查看</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="item-content  ">
+                                <div class="item-media"></div>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        支付时间
+                                    </div>
+                                    <div class="item-after">{{.order.CreatedAt.Format $.format}}</div>
+                                </div>
+                            </li>
+                            <li class="item-content  ">
+                                <div class="item-media"></div>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        支付单号
+                                    </div>
+                                    <div class="item-after">{{.order.EnvelopeNo}}</div>
+                                </div>
+                            </li>
+                            <li class="item-content  ">
+                                <div class="item-media"></div>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        红包单号
+                                    </div>
+                                    <div class="item-after">{{.order.EnvelopeNo}}</div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                {{else}}
+                    <h1 class='error'>出错了，红包不存在</h1>
+                {{end}}
+            </div>
+
+        </div>
+    </div>
+
+</div>

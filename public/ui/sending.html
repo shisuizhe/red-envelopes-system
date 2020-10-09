@@ -1,0 +1,90 @@
+<div class="page-group">
+    <!--发红包主页面-->
+    <form method="post" action="/envelope/sending" data-no-cache="true" >
+        <div class="page">
+            <header class="bar bar-nav theme-red">
+                <a class="button button-link button-nav pull-left back" href="#">
+                    <span class="icon icon-left"></span>
+                    返回
+                </a>
+                <h1 class='title'>发红包</h1>
+            </header>
+            <div class="content">
+                <div class="list-block">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label" id="amount_txt">总金额</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="总金额" name="amount" id="amount">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-name"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">改为</div>
+                                    <div class="item-input">
+                                        <select id="envelope_type" name="envelopeType">
+                                            <option value="2">碰运气红包</option>
+                                            <option value="1">普通红包</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title label">红包个数</div>
+                                    <div class="item-input">
+                                        <input type="text" name="quantity" placeholder="红包个数">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-media"><i class="icon icon-form-gender"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-input">
+                                        <input type="text" name="blessing" placeholder="恭喜发财，大吉大利！">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="content-block ">
+                    <h2 style="text-align: center">￥0.00</h2>
+                    <div class="row">
+                        <div class="col-25"><p></p></div>
+                        <div class="col-50">
+                            <button style="width: 100%" href="#" id="send_button"
+                                    class="button button-big button-fill button-danger">发送红包
+                            </button>
+
+                        </div>
+                        <div class="col-25"><p></p></div>
+                    </div>
+
+
+                </div>
+
+                <div class="content-block error">
+                    {{.msg}}
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

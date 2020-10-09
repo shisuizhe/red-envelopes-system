@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title> {{.Title}} </title>
+    <link href="/public/static/bootstrap/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="/public/views/css/app.css" rel="stylesheet"/>
+    <script src="/public/static/js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="/public/views/js/app.js"></script>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-red">
+        <a class="navbar-brand" href="#">红包秒杀系统DEMO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/v1/envelope/Sending">发红包</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">抢红包</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">查看列表</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-lg-12">
+            {{ yield }}
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="/public/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

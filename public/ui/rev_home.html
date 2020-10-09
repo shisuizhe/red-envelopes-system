@@ -1,0 +1,49 @@
+<div class="page-group">
+
+    <!--抢红包主页面-->
+    <div class="page" id='router3'>
+        <header class="bar bar-nav theme-red">
+            <a class="button button-link button-nav pull-left back" href="#">
+                <span class="icon icon-left"></span>
+                返回
+            </a>
+            <h1 class='title'>抢红包</h1>
+        </header>
+        <div class="content">
+            <div class="content-block-title">点击抢红包</div>
+
+            <div class="list-block">
+                <ul>
+                    {{range .orders}}
+                        <li>
+                            <a class="item-content item-link" href="/envelope/recd?id={{.EnvelopeNo}}"
+                               data-no-cache="true">
+                                <div class="item-media"><span class="icon iconfont icon-redenvelope-fill"></span></div>
+                                <div class="item-inner">
+                                    <div class="item-title">
+                                        <div>来自{{.UserName}}的<span
+                                                    class="come_from_envelope">{{if eq .EnvelopeType 1  }}普通红包{{else}}碰运气红包{{end}}</span>
+                                        </div>
+                                        <div class="date"> {{.CreatedAt.Format $.format}}</div>
+                                    </div>
+                                    <div class="item-after">
+                                        <div>
+                                            {{.Amount}} ￥
+                                            <div class="small_msg">总金额（剩余{{.RemainQuantity}}个/共{{.Quantity}}个）</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {{end}}
+
+                </ul>
+                {{if not .hasOrders}}
+                    <div class="txt_center"><h4 class='error'>还没有可抢的红包🧧</h4></div>
+                {{end}}
+            </div>
+
+        </div>
+    </div>
+
+</div>

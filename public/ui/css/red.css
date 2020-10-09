@@ -1,0 +1,317 @@
+.theme-red {
+    background-color: #c9394a
+}
+
+.bar.theme-red, .theme-red .bar {
+    background-color: #c9394a;
+    color: #fff
+}
+
+.bar.theme-red:after, .theme-red .bar:after {
+    background-color: #333
+}
+
+.theme-red .title {
+    color: #fff
+}
+
+.bar-nav.theme-red, .bar-tab.theme-red, .theme-red .bar-nav, .theme-red .bar-tab {
+    background-color: #c9394a;
+    color: #fff
+}
+
+.bar-nav.theme-red:before, .bar-tab.theme-red:before, .theme-red .bar-nav:before, .theme-red .bar-tab:before {
+    background-color: #333
+}
+
+.theme-red .tab-item {
+    color: #fff
+}
+
+.theme-red .tab-item.active {
+    color: #ffe8a1;
+    font-weight: bold;
+}
+
+.theme-red .tab-item.active .icon {
+    color: #ffe8a1;
+    font-weight: bold;
+}
+
+.theme-red .picker-calendar-week-days {
+    color: #fff;
+    background-color: #c9394a
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-center-highlight:before {
+    background-color: #333
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-center-highlight:after {
+    background-color: #333
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-item.picker-selected {
+    color: #fff
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-calendar-week-days {
+    color: #fff
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-calendar-day {
+    color: #fff
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-calendar-day.picker-calendar-day-next, .theme-red .picker-modal.picker-modal-inline .picker-calendar-day.picker-calendar-day-prev {
+    color: #777
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-calendar-day.picker-calendar-day-disabled {
+    color: #555
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-calendar-day.picker-calendar-day-today span {
+    background: #444
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-calendar-row:after, .theme-red .picker-modal.picker-modal-inline .picker-calendar-week-days:after {
+    background-color: #333
+}
+
+.theme-red .picker-modal.picker-modal-inline .picker-calendar-week-days ~ .picker-calendar-months:before, .theme-red .picker-modal.picker-modal-inline .toolbar ~ .picker-modal-inner .picker-calendar-months:before {
+    background-color: #333
+}
+
+.photo-browser.theme-red .navbar, .photo-browser.theme-red .toolbar, .theme-red .photo-browser .navbar, .theme-red .photo-browser .toolbar, .theme-red .view[data-page=photo-browser-slides] .navbar, .theme-red .view[data-page=photo-browser-slides] .toolbar, .view[data-page=photo-browser-slides].theme-red .navbar, .view[data-page=photo-browser-slides].theme-red .toolbar {
+    background: rgba(19, 19, 19, .95)
+}
+
+.theme-red .tabbar a:not(.active) {
+    color: #fff
+}
+
+.page.theme-red, .panel.theme-red, .theme-red .content, .theme-red .login-screen-content, .theme-red .page, .theme-red .panel {
+    background-color: #c9394a;
+    color: #ddd
+}
+
+.theme-red .content-block-title {
+    color: #fff
+}
+
+.content-block.theme-red, .theme-red .content-block {
+    color: #bbb
+}
+
+.theme-red .content-block-inner {
+    background: #c9394a;
+    color: #ddd
+}
+
+.theme-red .content-block-inner:before {
+    background-color: #393939
+}
+
+.theme-red .content-block-inner:after {
+    background-color: #393939
+}
+
+.list-block.theme-red ul, .theme-red .list-block ul {
+    background: #c9394a
+}
+
+.list-block.theme-red ul:before, .theme-red .list-block ul:before {
+    background-color: #393939
+}
+
+.list-block.theme-red ul:after, .theme-red .list-block ul:after {
+    background-color: #393939
+}
+
+.list-block.theme-red.inset ul, .theme-red .list-block.inset ul {
+    background: #c9394a
+}
+
+.list-block.theme-red.notifications > ul, .theme-red .list-block.notifications > ul {
+    background: 0 0
+}
+
+.list-block.theme-red .item-subtitle, .list-block.theme-red .item-title, .theme-red .list-block .item-subtitle, .theme-red .list-block .item-title {
+    color: #bbb
+}
+
+.theme-red .card {
+    background: #c9394a
+}
+
+.theme-red .card-header:after {
+    background-color: #393939
+}
+
+.theme-red .card-footer {
+    color: #bbb
+}
+
+.theme-red .card-footer:before {
+    background-color: #393939
+}
+
+.theme-red li.sorting {
+    background-color: #29292f
+}
+
+.theme-red .swipeout-actions-left a, .theme-red .swipeout-actions-right a {
+    background-color: #444
+}
+
+.theme-red .item-inner:after, .theme-red .list-block ul ul li:last-child .item-inner:after {
+    background-color: #393939
+}
+
+.theme-red .item-after {
+    color: #bbb
+}
+
+.theme-red .item-link.active-state, .theme-red label.label-checkbox.active-state, .theme-red label.label-radio.active-state, html:not(.watch-active-state) .theme-red .item-link:active, html:not(.watch-active-state) .theme-red label.label-checkbox:active, html:not(.watch-active-state) .theme-red label.label-radio:active {
+    background-color: #29292f
+}
+
+.theme-red .item-link.list-button:after {
+    background-color: #393939
+}
+
+.theme-red .list-block-label {
+    color: #bbb
+}
+
+.theme-red .item-divider, .theme-red .list-group-title {
+    background: #1a1a1a;
+    color: #bbb
+}
+
+.theme-red .item-divider:before, .theme-red .list-group-title:before {
+    background-color: #393939
+}
+
+.theme-red .searchbar {
+    background: #333
+}
+
+.theme-red .searchbar:after {
+    background-color: #333
+}
+
+.list-block.theme-red input[type=text], .list-block.theme-red input[type=password], .list-block.theme-red input[type=email], .list-block.theme-red input[type=tel], .list-block.theme-red input[type=url], .list-block.theme-red input[type=date], .list-block.theme-red input[type=datetime-local], .list-block.theme-red input[type=number], .list-block.theme-red select, .list-block.theme-red textarea, .theme-red .list-block input[type=text], .theme-red .list-block input[type=password], .theme-red .list-block input[type=email], .theme-red .list-block input[type=tel], .theme-red .list-block input[type=url], .theme-red .list-block input[type=date], .theme-red .list-block input[type=datetime-local], .theme-red .list-block input[type=number], .theme-red .list-block select, .theme-red .list-block textarea {
+    color: #fff
+}
+
+.theme-red .label-switch .checkbox {
+    background-color: #393939
+}
+
+.theme-red .label-switch .checkbox:before {
+    background-color: #c9394a
+}
+
+.theme-red .range-slider input[type=range]:after {
+    background: #c9394a
+}
+
+.theme-red .buttons-tab {
+    background: #c9394a
+}
+
+.theme-red .buttons-tab .tab-link:not(.active) {
+    color: #ddd;
+}
+
+
+.theme-red .icon {
+    color: #FFFFFF;
+}
+
+.theme-red .back {
+    color: #FFFFFF;
+}
+
+.small_msg {
+    font-size: 9px;
+    color: #999;
+    vertical-align: text-bottom;
+}
+
+.date {
+    font-size: 9px;
+    color: #999;
+}
+
+.come_from_envelope {
+    color: #c9394a;
+    font-size: 16px;
+}
+
+.icon-redenvelope-fill {
+    color: #c9394a;
+    font-size: 40px;
+}
+
+.icon-gift {
+    color: #c9394a;
+}
+
+.red {
+    color: #c9394a;
+}
+
+.img-gift {
+    height: 130px;
+}
+
+.txt_center {
+    text-align: center;
+}
+
+.list-block.small {
+    font-size: 14px;
+}
+
+.list-block.small .item-content {
+    font-size: 14px;
+}
+
+.header_img {
+    height: 30px;
+}
+
+.lucky_txt {
+    color: #ffc107;
+}
+
+.amount_big {
+    font-size: 50px;
+    color: #c9394a;
+}
+
+.button-danger {
+    border-color: #c9394a;
+    color: #c9394a;
+}
+
+.button-danger:active {
+    border-color: #c9394a;
+    color: #c9394a;
+}
+
+.button-danger.button-fill {
+    color: white;
+    background-color: #c9394a;
+}
+
+.button-danger.button-fill:active {
+    background-color: #c9394a;
+}
+
+.error {
+    color: #c9394a;
+}

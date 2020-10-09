@@ -1,0 +1,34 @@
+<div class="page-group">
+
+    <!--我抢到的红包-->
+    <div class="page" id='router4'>
+        <header class="bar bar-nav theme-red">
+            <a class="button button-link button-nav pull-left back" href="#">
+                <span class="icon icon-left"></span>
+                返回
+            </a>
+            <h1 class='title'>我抢到的红包</h1>
+        </header>
+        <div class="content">
+            <div class="content-block txt_center">
+
+                <div><img src="/public/ui/imgs/gift.gif" class="img-gift"/></div>
+                {{if .hasOrder}}
+                    {{if .hasReceived}}
+                        <div>我抢到{{.order.UserName}}的<span class="red ">{{if eq .order.EnvelopeType 1  }}普通红包{{else}}碰运气红包{{end}}</span>
+                        </div>
+                        <div class="red amount_big">{{.item.Amount}}</div>
+                    {{else}}
+                        <h1 class='error'>😂木有抢到，下次努力！</h1>
+                        <h6 class='error'>{{.msg}}</h6>
+                    {{end}}
+                {{else}}
+                    <h1 class='error'>出错了，红包不存在</h1>
+
+                {{end}}
+            </div>
+
+        </div>
+    </div>
+
+</div>

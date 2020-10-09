@@ -1,0 +1,43 @@
+<div class="page-group">
+
+    <!--我抢到的红包主页面-->
+    <div class="page" id='router7'>
+        <header class="bar bar-nav theme-red">
+            <a class="button button-link button-nav pull-left back" href="#">
+                <span class="icon icon-left"></span>
+                返回
+            </a>
+            <h1 class='title'>我抢到的红包</h1>
+        </header>
+        <div class="content">
+            <div class="content-block-title">总共抢到</div>
+
+            <div class="list-block">
+                <ul>
+                    {{range .items}}
+                        <li>
+                            <a class="item-content item-link" href="/envelope/details?id={{.EnvelopeNo}}"
+                               data-no-cache="true">
+                                <div class="item-media"><span class="icon iconfont icon-redenvelope-fill"></span></div>
+                                <div class="item-inner">
+
+                                    <div class="item-title">
+                                        <div>来自<span class="come_from_envelope">{{.Desc}}</span></div>
+                                        <div class="date"> {{.CreatedAt.Format $.format}}</div>
+                                    </div>
+                                    <div class="item-after">
+                                        <div>
+                                            {{.Amount}} ￥
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    {{end}}
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
